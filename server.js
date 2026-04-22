@@ -30,17 +30,7 @@ app.set("view engine", "ejs");
 
 
 // 4: Routing code
-/*
-app.get("/", function(req, res) {
-    res.end(`<h1>HELLO WORLD by Ryan</h1>`);
-});
-app.get("/greeting", function(req, res) {
-    res.end(`<h1>I am web developer</h1>`);
-});
-app.get("/gift", function(req, res) {
-    res.end(`<h1>Siz sovgalar bolimidasiz</h1>`);
-});
-*/
+
 app.post('/create-item', (req, res) => {
     //console.log(req.body);
     //console.log(req);
