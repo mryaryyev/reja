@@ -81,7 +81,7 @@
                 <div class="marginer"></div>
 
                 <div class="left_3">
-                    <div style="margin-bottom: 15px;">Languages</div>
+                    <div style="margin-bottom: 15px; font-weight: bolder;">Languages</div>
                     <div class="left_3_lan">
                         <div><%=user.languages[0]%></div>
                         <div>100%</div>
@@ -102,7 +102,7 @@
                 <div class="marginer"></div>
 
                 <div class="left_4">
-                    <div style="margin-bottom: 15px;">Skills</div>
+                    <div style="margin-bottom: 15px; font-weight: bolder;">Skills</div>
                     <div class="left_4_skill">
                         <div><%=user.skills[0]%></div>
                         <div>90%</div>
@@ -132,14 +132,123 @@
 
                 <div class="marginer"></div>
 
-                <div class="left_5"></div>
+                <div class="left_5">
+                    <div style="margin-bottom: 15px; font-weight: bolder;">Extra Skills</div>
+                    <div class="left_5_extra">
+                        <img src="icon/icons.svg" style="margin-right: 8px;">
+                        <div><%=user.extra_skills[0]%></div>
+                    </div>
+                    <div class="left_5_extra">
+                        <img src="icon/icons.svg" style="margin-right: 8px;">
+                        <div><%=user.extra_skills[1]%></div>
+                    </div>
+                    <div class="left_5_extra">
+                        <img src="icon/icons.svg" style="margin-right: 8px;">
+                        <div><%=user.extra_skills[2]%></div>
+                    </div>
+                    <div class="left_5_extra">
+                        <img src="icon/icons.svg" style="margin-right: 8px;">
+                        <div><%=user.extra_skills[3]%></div>
+                    </div>
+                    
+                </div>
 
                 <div class="marginer"></div>
 
             </div>
 
-            <div class="midd_frame"></div>
-            <div class="right_frame"></div>
+            <div class="midd_frame">
+
+                <div class="midd_1">
+
+                    <div class="midd_1_1">
+                        <div class="midd_1_1_text1">Doctor neurologists in OHSU Hospital</div>
+                        <div class="midd_1_1_text2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc lectus.</div>
+                        <button class="button">HIRE ME &gt;</button>
+                    </div>
+
+                    <div>
+                        <img class="profile_big" src="images/profile_big.png" alt="">
+                    </div>
+
+                </div>
+
+                <div class="midd_2">
+                    <div class="midd_2_1">My Services</div>
+                    <div class="midd_2_2"><%=user.service_desc%></div>
+                    <div class="midd_2_3">
+                        <div class="midd_2_3_template">
+                            <img class="service_image" src="menu_icon/web-icon.svg" alt="">
+                            <div class="service_name">Web Development</div>
+                            <div class="service_name_detail">Blog, E-Commerce</div>
+                        </div>
+                        
+                        <div class="midd_2_3_template">
+                            <img class="service_image" src="menu_icon/ux-icon.svg" alt="">
+                            <div class="service_name">UI/UX Design</div>
+                            <div class="service_name_detail">Mobile App, Website Design</div>
+                        </div>
+
+                        <div class="midd_2_3_template">
+                            <img class="service_image" src="menu_icon/sound-icon.svg" alt="">
+                            <div class="service_name">Sound Design</div>
+                            <div class="service_name_detail">Voice Over, Beat Making</div>
+                        </div>
+                    </div>
+                    
+                    <div class="midd_2_3">
+                        <div class="midd_2_3_template">
+                            <img class="service_image" src="menu_icon/game-icon.svg" alt="">
+                            <div class="service_name">Game Design</div>
+                            <div class="service_name_detail">Character Design, Props & Objects</div>
+                        </div>
+                        
+                        <div class="midd_2_3_template">
+                            <img class="service_image" src="menu_icon/photograph-icon.svg" alt="">
+                            <div class="service_name">Photography</div>
+                            <div class="service_name_detail">Portrait, Product Photography</div>
+                        </div>
+
+                        <div class="midd_2_3_template">
+                            <div class="advertising">Advertising</div>
+                            <div class="advertising_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium animi consequatur a consequuntur inventore dolore.</div>
+                            <div><a href="www.google.com" class="order">ORDER NOW ></a></div>
+                        </div>
+                    </div>          
+                    
+
+                </div>
+
+            </div>
+
+
+            <div class="right_frame">
+                <button class="contrast">
+                    <img src="btn_icon/contrast.svg" alt="">
+                </button>
+                <div class="home_tooltip">
+                    <div class="tooltip">Home</div>
+                    <div class="home_icon">
+                        <img src="btn_icon/home.svg" alt="">
+                    </div>
+                    </div>              
+                <button class="btn_icons">
+                    <img src="btn_icon/file.svg" alt="">
+                </button>
+                <button class="btn_icons">
+                    <img src="btn_icon/cv.svg" alt="">
+                </button>
+                <button class="btn_icons">
+                    <img src="btn_icon/briefcase.svg" alt="">
+                </button>
+                <button class="btn_icons">
+                    <img src="btn_icon/blog.svg" alt="">
+                </button>
+                <button class="btn_icons">
+                    <img src="btn_icon/contact.svg" alt="">  
+                </button>
+
+            </div>
         </div>
     </div>
 </body>
