@@ -1,6 +1,26 @@
 // console.log('TRAIN AREA!');
 
-// MITTASK-1
+// A-TASK
+/*
+Shunday 2 parametrli function tuzing, hamda birinchi parametrdagi letterni ikkinchi parametrdagi sozdan qatnashga sonini return qilishi kerak boladi.
+MASALAN countLetter("e", "engineer") 3ni return qiladi.
+*/
+
+// a => letter
+// b => word
+
+function count_letter(a,b) {
+    let count = 0
+    for (i = 0; i < b.length; i++) {
+        if (a===b[i]) {
+            count++
+        }
+    }
+    return count
+}
+const a_task = count_letter("a", "ashgabat");
+console.log(a_task);
+
 
 
 
