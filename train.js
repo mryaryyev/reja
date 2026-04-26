@@ -6,9 +6,9 @@ Shunday 2 parametrli function tuzing, hamda birinchi parametrdagi letterni ikkin
 MASALAN countLetter("e", "engineer") 3ni return qiladi.
 */
 
+/*
 // a => letter
 // b => word
-
 function count_letter(a,b) {
     let count = 0
     for (i = 0; i < b.length; i++) {
@@ -20,10 +20,28 @@ function count_letter(a,b) {
 }
 const a_task = count_letter("a", "ashgabat");
 console.log(a_task);
+*/
 
 
+// B-TASK
+/*
+Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
+MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
+*/
+function countDigits(a) {
+    let count = 0
+    for(i = 0; i < a.length; i++) {
+        if(a[i] >= 0 && a[i] <= 9) {
+            count++
+        } 
+    }
+    return count
+}
+const b_task = countDigits("asd213qw5e056jkl7");
+console.log(b_task);
 
 
+/*
 console.log('Jack Ma maslahatlari');
 const list = [
     "yahshi talaba boling", // 0-20
@@ -33,7 +51,7 @@ const list = [
     "yoshlarga investitsiya qiling", //50-60
     "endi dam oling, foydasi yoq endi", //60 
 ];
-
+*/
 
 // Event loop vs Callback function
 /*
@@ -94,7 +112,6 @@ maslahatBering(65, (err, data) => {
 console.log('passed here 1');
 */
 
-
 // ASYNCHRONOUS function
 /*
 async function maslahatBering(a) {
@@ -127,7 +144,6 @@ maslahatBering(25)
 console.log('passed here 1');
 */
 
-
 // CALLBACK HELL yoki PROMISE HELL hosil bolyapti => juda naqulay
 /*
 console.log('passed here 0');
@@ -157,7 +173,6 @@ maslahatBering(25)
 console.log('passed here 1');
 */
 
-
 // Call via ASYNCH / AWAIT
 /*
 async function run() {
@@ -172,6 +187,7 @@ run();
 */
 
 // PROMISE function --> bizga SetTimeout ishlashga yordam beradi
+/*
 async function maslahatBering(a) {
     if (typeof a !== 'number') throw new Error("insert a number");
     else if (a <= 20) return list[0];
@@ -200,3 +216,4 @@ async function run() {
     console.log(javob);
 }
 run();
+*/
