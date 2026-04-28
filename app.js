@@ -1,28 +1,26 @@
-console.log('Web Serverni boshlash');
+console.log("Web Serverni boshlash");
 const express = require("express");
 const app = express(); // expressning app Objectni yuboradi
 const fs = require("fs");
 
 let user;
 fs.readFile("database/user.json", "utf8", (err, data) => {
-    if(err) {
-        console.log("ERROR:" ,err);
-    } else {
-        user = JSON.parse(data)
-    }
+  if (err) {
+    console.log("ERROR:", err);
+  } else {
+    user = JSON.parse(data);
+  }
 });
-
 
 // MongoDB choqirish
 const db = require("./server").db();
-
 
 // app objectida 4 ta bosgichga bolamiz
 
 // 1: Kirish code
 app.use(express.static("public")); // public folder ochik boladi clientlarga/koroladi
 app.use(express.json()); // kirip kelyatgan json formatdaki datani Object holatiga bizga ogurip beradi
-app.use(express.urlencoded({extended: true})); // html'dan traditional request form shakli bor, formdan biror narsani post qilsak, bizning express serverimiz qabul qiloladi
+app.use(express.urlencoded({ extended: true })); // html'dan traditional request form shakli bor, formdan biror narsani post qilsak, bizning express serverimiz qabul qiloladi
 
 // 2: Sesssion code
 
@@ -32,41 +30,43 @@ app.use(express.urlencoded({extended: true})); // html'dan traditional request f
 app.set("views", "views");
 app.set("view engine", "ejs");
 
-
 // 4: Routing code
 
-app.post('/create-item', (req, res) => {
-    console.log("user entered /");
-    //console.log(req.body);
-    const new_reja = req.body.reja;
-    db.collection("plans").insertOne({reja: new_reja}, (err, data) => {
-        if(err) {
-            console.log(err);
-            res.end("something went wrong");
-        } else {
-            res.end("successfully added");
-        }
-    });
-    //console.log(req);
-    //res.json({ test: "success" });
+app.post("/create-item", (req, res) => {
+  console.log("user entered /create-item");
+  //console.log(req.body);
+  const new_reja = req.body.reja;
+  db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
+    console.log(data.ops);
+    res.json(data.ops[0]);
+    // if(err) {
+    //     console.log(err);
+    //     res.end("something went wrong");
+    // } else {
+    //     res.end("successfully added");
+    // }
+  });
+  //console.log(req);
+  //res.json({ test: "success" });
 });
 
-app.get('/author', (req, res) => {
-    res.render('author', {user: user});
+app.get("/author", (req, res) => {
+  res.render("author", { user: user });
 });
 
 app.get("/", function (req, res) {
-    console.log("user entered /");
-    db.collection("plans").find().toArray((err, data) => { // mongoDB bilan CRUD operatsiyani amalga oshiramiz
-        if(err) {
-            console.log(err);
-            res.end("something went wrong");
-        } else {
-            res.render("reja", {items: data });
-        }
-    }); 
+  console.log("user entered /");
+  db.collection("plans")
+    .find()
+    .toArray((err, data) => {
+      // mongoDB bilan CRUD operatsiyani amalga oshiramiz
+      if (err) {
+        console.log(err);
+        res.end("something went wrong");
+      } else {
+        res.render("reja", { items: data });
+      }
+    });
 });
-
-
 
 module.exports = app;
