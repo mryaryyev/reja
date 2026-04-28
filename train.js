@@ -22,12 +22,12 @@ const a_task = count_letter("a", "ashgabat");
 console.log(a_task);
 */
 
-
 // B-TASK
 /*
 Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
 MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
 */
+/*
 function countDigits(a) {
     let count = 0
     for(i = 0; i < a.length; i++) {
@@ -39,7 +39,31 @@ function countDigits(a) {
 }
 const b_task = countDigits("asd213qw5e056jkl7");
 console.log(b_task);
+*/
 
+// C-TASK
+/*
+Shunday function tuzing, u 2ta string parametr ega bolsin.
+hamda agar har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin.
+MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true.
+*/
+function checkContent(a, b) {
+  if (a.length !== b.length)
+    return false;
+
+  for (i = 0; i < a.length; i++) {
+    if (!b.includes(a[i])) {
+      return false;
+    }
+  }
+  return true;
+}
+const c_task1 = checkContent("day", "yad");
+const c_task2 = checkContent("money", "yeno");
+const c_task3 = checkContent("qwerty", "qwertt");
+console.log(c_task1);
+console.log(c_task2);
+console.log(c_task3);
 
 /*
 console.log('Jack Ma maslahatlari');
