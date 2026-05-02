@@ -47,6 +47,7 @@ Shunday function tuzing, u 2ta string parametr ega bolsin.
 hamda agar har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin.
 MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true.
 */
+/*
 function checkContent(a, b) {
   if (a.length !== b.length)
     return false;
@@ -64,6 +65,52 @@ const c_task3 = checkContent("qwerty", "qwertt");
 console.log(c_task1);
 console.log(c_task2);
 console.log(c_task3);
+*/
+
+/*
+D-TASK
+Shunday class tuzing tuzing nomi Shop,     
+va uni constructoriga 3 hil mahsulot pass bolsin,
+hamda classning 3ta methodi bolsin, biri qoldiq, biri sotish va biri qabul.
+Har bir method ishga tushgan vaqt ham log qilinsin.
+MASALAN: const shop = new Shop(4, 5, 2); shop.qoldiq() return hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud!
+shop.sotish('non', 3) & shop.qabul('cola', 4) & shop.qoldiq() return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud!
+*/
+const moment = require("moment");
+const time = moment().format("HH:mm");
+class Shop {
+  //state
+  non;
+  lagmon;
+  cola;
+  //constructor
+  constructor(non, lagmon, cola) {
+    this.non = non;
+    this.lagmon = lagmon;
+    this.cola = cola;
+  }
+  //method
+  qoldiq() {
+    console.log(
+      `Hozir ${time}da ${this.non}ta non, ${this.lagmon}ta lagmon va ${this.cola}ta cola mavjud!`,
+    );
+  }
+
+  sotish(product, quantity) {
+    this[product] -= quantity;
+  }
+
+  qabul(product, quantity) {
+    this[product] += quantity;
+  }
+}
+
+const shop = new Shop(4, 5, 2);
+
+shop.qoldiq();
+shop.sotish("non", 3);
+shop.qabul("cola", 4);
+shop.qoldiq();
 
 /*
 console.log('Jack Ma maslahatlari');
