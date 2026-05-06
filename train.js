@@ -76,6 +76,7 @@ Har bir method ishga tushgan vaqt ham log qilinsin.
 MASALAN: const shop = new Shop(4, 5, 2); shop.qoldiq() return hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud!
 shop.sotish('non', 3) & shop.qabul('cola', 4) & shop.qoldiq() return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud!
 */
+/*
 const moment = require("moment");
 const time = moment().format("HH:mm");
 class Shop {
@@ -111,6 +112,26 @@ shop.qoldiq();
 shop.sotish("non", 3);
 shop.qabul("cola", 4);
 shop.qoldiq();
+*/
+
+
+// E-TASK
+/*
+Shunday function tuzing,
+u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
+MASALAN: getReverse("hello") return qilsin "olleh".
+*/
+function getReverse(a) {
+    let b = a.split(""); //convert string to array
+    return b.reverse().join(""); //reverse in array and convert it to string
+}
+
+const getReverse1 = getReverse("hello");
+console.log(getReverse1);
+
+const getReverse2 = getReverse("goodbye")
+console.log(getReverse2);
+
 
 /*
 console.log('Jack Ma maslahatlari');
