@@ -1,74 +1,54 @@
-// console.log('TRAIN AREA!');
+console.log('TRAIN AREA!');
 
-// A-TASK
-/*
-Shunday 2 parametrli function tuzing, hamda birinchi parametrdagi letterni ikkinchi parametrdagi sozdan qatnashga sonini return qilishi kerak boladi.
-MASALAN countLetter("e", "engineer") 3ni return qiladi.
+/* F_TASK
+Shunday findDoublers function tuzing,
+unga faqat bitta string argument pass bolib, agar stringda bir hil harf qatnashgan bolsa true, qatnashmasa false qaytarishi kerak.
+MASALAN: getReverse("hello") return true return qiladi.
 */
 
-/*
-// a => letter
-// b => word
-function count_letter(a,b) {
-    let count = 0
-    for (i = 0; i < b.length; i++) {
-        if (a===b[i]) {
-            count++
+function findDoublers(a) {
+    if (typeof a !== "string") {
+        return "ERROR, write only string";
+    }
+
+    let word = "";
+    for (i = 0; i < a.length; i++) {
+        if (word.includes(a[i])) {
+            return true;
         }
+        word += a[i];
     }
-    return count
-}
-const a_task = count_letter("a", "ashgabat");
-console.log(a_task);
-*/
-
-// B-TASK
-/*
-Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
-MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
-*/
-/*
-function countDigits(a) {
-    let count = 0
-    for(i = 0; i < a.length; i++) {
-        if(a[i] >= 0 && a[i] <= 9) {
-            count++
-        } 
-    }
-    return count
-}
-const b_task = countDigits("asd213qw5e056jkl7");
-console.log(b_task);
-*/
-
-// C-TASK
-/*
-Shunday function tuzing, u 2ta string parametr ega bolsin.
-hamda agar har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin.
-MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true.
-*/
-/*
-function checkContent(a, b) {
-  if (a.length !== b.length)
     return false;
-
-  for (i = 0; i < a.length; i++) {
-    if (!b.includes(a[i])) {
-      return false;
-    }
-  }
-  return true;
 }
-const c_task1 = checkContent("day", "yad");
-const c_task2 = checkContent("money", "yeno");
-const c_task3 = checkContent("qwerty", "qwertt");
-console.log(c_task1);
-console.log(c_task2);
-console.log(c_task3);
+
+const IsSameLetter1 = findDoublers("hello");
+console.log(IsSameLetter1)
+
+const IsSameLetter2 = findDoublers("mit");
+console.log(IsSameLetter2)
+
+
+
+/* E-TASK
+Shunday function tuzing,
+u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
+MASALAN: getReverse("hello") return qilsin "olleh".
+*/
+/*
+function getReverse(a) {
+    let b = a.split(""); //convert string to array
+    return b.reverse().join(""); //reverse in array and convert it to string
+}
+
+const getReverse1 = getReverse("hello");
+console.log(getReverse1);
+
+const getReverse2 = getReverse("goodbye")
+console.log(getReverse2);
 */
 
-/*
-D-TASK
+
+/* D-TASK
 Shunday class tuzing tuzing nomi Shop,     
 va uni constructoriga 3 hil mahsulot pass bolsin,
 hamda classning 3ta methodi bolsin, biri qoldiq, biri sotish va biri qabul.
@@ -115,22 +95,70 @@ shop.qoldiq();
 */
 
 
-// E-TASK
-/*
-Shunday function tuzing,
-u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
-MASALAN: getReverse("hello") return qilsin "olleh".
+/* C-TASK
+Shunday function tuzing, u 2ta string parametr ega bolsin.
+hamda agar har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin.
+MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true.
 */
-function getReverse(a) {
-    let b = a.split(""); //convert string to array
-    return b.reverse().join(""); //reverse in array and convert it to string
+/*
+function checkContent(a, b) {
+  if (a.length !== b.length)
+    return false;
+
+  for (i = 0; i < a.length; i++) {
+    if (!b.includes(a[i])) {
+      return false;
+    }
+  }
+  return true;
 }
+const c_task1 = checkContent("day", "yad");
+const c_task2 = checkContent("money", "yeno");
+const c_task3 = checkContent("qwerty", "qwertt");
+console.log(c_task1);
+console.log(c_task2);
+console.log(c_task3);
+*/
 
-const getReverse1 = getReverse("hello");
-console.log(getReverse1);
 
-const getReverse2 = getReverse("goodbye")
-console.log(getReverse2);
+/* B-TASK
+Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
+MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
+*/
+/*
+function countDigits(a) {
+    let count = 0
+    for(i = 0; i < a.length; i++) {
+        if(a[i] >= 0 && a[i] <= 9) {
+            count++
+        } 
+    }
+    return count
+}
+const b_task = countDigits("asd213qw5e056jkl7");
+console.log(b_task);
+*/
+
+
+/* A-TASK
+Shunday 2 parametrli function tuzing, hamda birinchi parametrdagi letterni ikkinchi parametrdagi sozdan qatnashga sonini return qilishi kerak boladi.
+MASALAN countLetter("e", "engineer") 3ni return qiladi.
+*/
+/*
+// a => letter
+// b => word
+function count_letter(a,b) {
+    let count = 0
+    for (i = 0; i < b.length; i++) {
+        if (a===b[i]) {
+            count++
+        }
+    }
+    return count
+}
+const a_task = count_letter("a", "ashgabat");
+console.log(a_task);
+*/
 
 
 /*
