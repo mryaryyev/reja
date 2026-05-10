@@ -1,11 +1,42 @@
-console.log('TRAIN AREA!');
+console.log("TRAIN AREA!");
+/*
+G-TASK
+Shunday function tuzingki
+unga integerlardan iborat array pass bolsin va
+function bizga osha arrayning eng katta qiymatiga tegishli birinchi indexni qaytarsin.
+MASALAN: getHighestIndex([5, 21, 12, 21, 8]) return qiladi 1 sonini
+*/
+function getHighestIndex(a) {
+  if (a.some((ele) => typeof ele !== "number")) {
+    return "ERROR, elements of array must be number";
+  }
 
-/* F_TASK
+  let highestIndex = 0;
+  for (let i = 1; i < a.length; i++) {
+    if (a[i] > a[highestIndex]) {
+      highestIndex = i;
+    }
+  }
+  return highestIndex;
+}
+a = [1, 5, 8, 9, 2];
+result1 = getHighestIndex(a);
+console.log(result1);
+
+b = [5, 7, 25, 7, 25];
+result2 = getHighestIndex(b);
+console.log(result2);
+
+c = [5, 7, 25, 7, "b"];
+result3 = getHighestIndex(c);
+console.log(result3);
+
+/* F-TASK
 Shunday findDoublers function tuzing,
 unga faqat bitta string argument pass bolib, agar stringda bir hil harf qatnashgan bolsa true, qatnashmasa false qaytarishi kerak.
 MASALAN: getReverse("hello") return true return qiladi.
 */
-
+/*
 function findDoublers(a) {
     if (typeof a !== "string") {
         return "ERROR, write only string";
@@ -26,8 +57,7 @@ console.log(IsSameLetter1)
 
 const IsSameLetter2 = findDoublers("mit");
 console.log(IsSameLetter2)
-
-
+*/
 
 /* E-TASK
 Shunday function tuzing,
@@ -46,7 +76,6 @@ console.log(getReverse1);
 const getReverse2 = getReverse("goodbye")
 console.log(getReverse2);
 */
-
 
 /* D-TASK
 Shunday class tuzing tuzing nomi Shop,     
@@ -94,7 +123,6 @@ shop.qabul("cola", 4);
 shop.qoldiq();
 */
 
-
 /* C-TASK
 Shunday function tuzing, u 2ta string parametr ega bolsin.
 hamda agar har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin.
@@ -120,7 +148,6 @@ console.log(c_task2);
 console.log(c_task3);
 */
 
-
 /* B-TASK
 Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
 MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
@@ -138,7 +165,6 @@ function countDigits(a) {
 const b_task = countDigits("asd213qw5e056jkl7");
 console.log(b_task);
 */
-
 
 /* A-TASK
 Shunday 2 parametrli function tuzing, hamda birinchi parametrdagi letterni ikkinchi parametrdagi sozdan qatnashga sonini return qilishi kerak boladi.
@@ -159,7 +185,6 @@ function count_letter(a,b) {
 const a_task = count_letter("a", "ashgabat");
 console.log(a_task);
 */
-
 
 /*
 console.log('Jack Ma maslahatlari');
