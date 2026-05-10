@@ -50,13 +50,13 @@ app.post("/create-item", (req, res) => {
 
   //console.log(req.body);
   const new_reja = req.body.reja;
-  console.log(new_reja);
+  //console.log(new_reja);
   console.log("STEP3: BACKENDdan DATABASEga jonash"); //FRONTENDdan kelgan new_reja molumot bilan DATABASEga jonash
 
   db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
     console.log("STEP4: DATABASEdan BACKENDga qaytish"); //DATABASEga molumotni yozip qaytdi
 
-    console.log(data.ops);
+    //console.log(data.ops);
     res.json(data.ops[0]);
     // if(err) {
     //     console.log(err);
@@ -121,7 +121,7 @@ app.get("/", function (req, res) {
         res.end("something went wrong");
       } else {
         console.log("STEP4: DATABASEdan BACKENDga qaytish");
-        console.log(data); // DATABASEdan kelgan malumot
+        //console.log(data); // DATABASEdan kelgan malumot
 
         console.log("STEP5: BACKENDdan FRONTENDga response berish");
         // 1.json formatta jonatip REACT orqali HTML kurish

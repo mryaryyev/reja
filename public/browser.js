@@ -34,9 +34,9 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
 });
 
 document.addEventListener("click", function (e) {
-  //console.log(e);
+  // console.log(e);
   // delete oper
-  console.log(e.target);
+  // console.log(e.target);
   if (e.target.classList.contains("delete-me")) {
     //alert("siz delete tugmasini bosdingiz");
     if (confirm("aniq ochirmokchimisiz?")) {
@@ -70,7 +70,7 @@ document.addEventListener("click", function (e) {
           new_input: userInput,
         })
         .then((response) => {
-          console.log(response.data);
+          //console.log(response.data);
           e.target.parentElement.parentElement.querySelector(
             ".item-text",
           ).innerHTML = userInput;
