@@ -9,15 +9,21 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/reja.css">
   </head>
 
   <%
   console.log("Man BACKENDda HTMLni kurdim")
   %>
 
-  <body style="background-color: #b8bbd1">
-    <div class="container">
-      <h1 class="display-5 text-center py-1">REJA VA MAQSADLAR</h1>
+  <body style="background-color: rgb(230 , 230, 230)">
+    <div class="container" style="background-color: lightgray; margin-top: 10px; padding-bottom: 10px;">
+      <div class="d-flex justify-content-center align-items-center">
+        <img src="/reja/icons/action-plan.png" style="width: 40px; height: 40px;" alt="">
+      <h1 class="display-6 text-center py-1" style="margin-left: 15px;">Reja & Maqsadlar</h1>
+      </div>
+      
 
       <div class="jumbotron p-3 shadow-sm">
         <form id="create-form" action="/create-item" method="POST">
@@ -39,10 +45,29 @@
       </div>
 
 
-      <ul id="item-list" class="list-group pb-5">
+      <ul id="item-list" class="list-group mb-2">
         <% items.map(function(item) { %>
-          <li class="list-group-item list-group-item-info d-flex align-items-center justify-content-between">
-          <span class="item-text"><%=item.reja%></span>
+          <li class="list-group-item list-group-item-info d-flex align-items-center justify-content-between mb-1 custom-item">
+            <div class="d-flex align-items-center">
+              <% if (item.reja.toLowerCase().includes('javascript')) { %>
+                <i class="fab fa-js-square me-2 text-warning" style="font-size: 1.5rem;"></i>
+              <% } else if (item.reja.toLowerCase().includes('react')) { %>
+                <i class="fab fa-react me-2 text-info" style="font-size: 1.5rem;"></i>
+              <% } else if (item.reja.toLowerCase().includes('node')) { %>
+                <i class="fab fa-node-js me-2 text-success" style="font-size: 1.5rem;"></i>
+              <% } else if (item.reja.toLowerCase().includes('mongodb') || item.reja.toLowerCase().includes('database')) { %>
+                <i class="fas fa-database me-2 text-secondary" style="font-size: 1.5rem;"></i>
+              <% } else if (item.reja.toLowerCase().includes('ai')) { %>
+                <i class="fas fa-robot text-dark me-2"></i>
+              <% } else if (item.reja.toLowerCase().includes('devops')) { %>
+                <i class="fas fa-infinity text-secondary me-2"></i>
+              <% } else { %>
+                <i class="fas fa-code me-2 text-dark" style="font-size: 1.5rem;"></i>
+              <% } %>
+            
+            <span class="item-text ms-2"><%= item.reja %></span>
+            </div>
+          
           <div>
             <button 
               data-id="<%=item._id%>" 
@@ -60,7 +85,7 @@
         
       </ul>
 
-      <button id="clean-all" class="btn btn-danger" style="border-radius: 20px">
+      <button id="clean-all" class="btn btn-danger w-100" style="border-radius: 20px">
         Hamma Rejalarni ochirish
       </button>
     </div>
