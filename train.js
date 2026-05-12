@@ -1,11 +1,30 @@
 console.log("TRAIN AREA!");
-/*
-G-TASK
+
+/* H-TASK
+Shunday function tuzing,
+u integerlardan iborat arrayni argument sifatida qabul qilib
+faqat positive qiymatlarni olib string holatda return qilsin.
+MASALAN: getPositive([1, -4, 2]) return qiladi "12".
+*/
+function getPositive(a) {
+  if (a.some((ele) => typeof ele !== "number")) {
+    return "ERROR, elements of array must be number!";
+  }
+  return a.filter((num) => num > 0).join("");
+}
+
+const a = [1, -4, 2];
+const result = getPositive(a);
+console.log(result);
+console.log(typeof result);
+
+/* G-TASK
 Shunday function tuzingki
 unga integerlardan iborat array pass bolsin va
 function bizga osha arrayning eng katta qiymatiga tegishli birinchi indexni qaytarsin.
 MASALAN: getHighestIndex([5, 21, 12, 21, 8]) return qiladi 1 sonini
 */
+/*
 function getHighestIndex(a) {
   if (a.some((ele) => typeof ele !== "number")) {
     return "ERROR, elements of array must be number";
@@ -19,17 +38,18 @@ function getHighestIndex(a) {
   }
   return highestIndex;
 }
-a = [1, 5, 8, 9, 2];
-result1 = getHighestIndex(a);
+const a = [1, 5, 8, 9, 2];
+const result1 = getHighestIndex(a);
 console.log(result1);
 
-b = [5, 7, 25, 7, 25];
-result2 = getHighestIndex(b);
+const b = [5, 7, 25, 7, 25];
+const result2 = getHighestIndex(b);
 console.log(result2);
 
-c = [5, 7, 25, 7, "b"];
-result3 = getHighestIndex(c);
+const c = [5, 7, 25, 7, "b"];
+const result3 = getHighestIndex(c);
 console.log(result3);
+*/
 
 /* F-TASK
 Shunday findDoublers function tuzing,
