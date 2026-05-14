@@ -1,11 +1,31 @@
 console.log("TRAIN AREA!");
 
+/* I-TASK
+Shunday function yozing,
+u parametridagi array ichida eng kop takrorlangan raqamni topib qaytarsin.
+MASALAN: majorityElement([1,2,3,4,5,4,3,4]) return 4.
+*/
+function majorityElement(a) {
+  return a.sort(
+    (x, y) =>
+      a.filter((ele) => ele === y).length - a.filter((ele) => ele === x).length,
+  )[0];
+}
+
+a = [1, 2, 3, 4, 5, 4, 3, 4];
+console.log(majorityElement(a));
+
+b = [2, 3, 4, 4, 3, 3, 2]
+console.log(majorityElement(b));
+
+
 /* H-TASK
 Shunday function tuzing,
 u integerlardan iborat arrayni argument sifatida qabul qilib
 faqat positive qiymatlarni olib string holatda return qilsin.
 MASALAN: getPositive([1, -4, 2]) return qiladi "12".
 */
+/*
 function getPositive(a) {
   if (a.some((ele) => typeof ele !== "number")) {
     return "ERROR, elements of array must be number!";
@@ -17,6 +37,7 @@ const a = [1, -4, 2];
 const result = getPositive(a);
 console.log(result);
 console.log(typeof result);
+*/
 
 /* G-TASK
 Shunday function tuzingki
