@@ -1,10 +1,38 @@
 console.log("TRAIN AREA!");
 
+/* J-TASK
+Shunday function yozing,
+u string qabul qilsin va string ichidagi eng uzun sozni qaytarsin.
+MASALAN: findLongestWord("I come from Uzbekistan") return "Uzbekistan".
+*/
+function findLongestWord(text) {
+  if (typeof text !== "string") {
+    return "ERROR, write only string";
+  }
+
+  let my_list = text.split(" ");
+
+  let longest_word = my_list[0];
+
+  for (let i = 0; i < my_list.length; i++) {
+    if (my_list[i].length > longest_word.length) {
+      longest_word = my_list[i];
+    }
+  }
+  return longest_word;
+}
+result1 = findLongestWord("I come from Uzbekistan");
+console.log(result1);
+
+result2 = findLongestWord("I am living in Korea");
+console.log(result2);
+
 /* I-TASK
 Shunday function yozing,
 u parametridagi array ichida eng kop takrorlangan raqamni topib qaytarsin.
 MASALAN: majorityElement([1,2,3,4,5,4,3,4]) return 4.
 */
+/*
 function majorityElement(a) {
   return a.sort(
     (x, y) =>
@@ -17,7 +45,7 @@ console.log(majorityElement(a));
 
 b = [2, 3, 4, 4, 3, 3, 2]
 console.log(majorityElement(b));
-
+*/
 
 /* H-TASK
 Shunday function tuzing,
