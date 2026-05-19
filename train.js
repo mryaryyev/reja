@@ -1,10 +1,35 @@
 console.log("TRAIN AREA!");
 
+/* K-TASK
+Shunday function yozing,
+u string qabul qilsin
+va string ichidagi unli harflar sonini qaytarsin.
+MASALAN: countVowels("string") return 1.
+*/
+function countVowels(a) {
+  if (typeof a !== "string") {
+    return "ERROR, write only string!";
+  }
+
+  const vowelLetter = "aeiouAEIOU";
+
+  let count = 0;
+  for (let i = 0; i < a.length; i++) {
+    if (vowelLetter.includes(a[i])) count += 1;
+  }
+  return count;
+}
+result1 = countVowels("string");
+console.log(result1);
+result2 = countVowels("Array");
+console.log(result2);
+
 /* J-TASK
 Shunday function yozing,
 u string qabul qilsin va string ichidagi eng uzun sozni qaytarsin.
 MASALAN: findLongestWord("I come from Uzbekistan") return "Uzbekistan".
 */
+/*
 function findLongestWord(text) {
   if (typeof text !== "string") {
     return "ERROR, write only string";
@@ -26,6 +51,7 @@ console.log(result1);
 
 result2 = findLongestWord("I am living in Korea");
 console.log(result2);
+*/
 
 /* I-TASK
 Shunday function yozing,
