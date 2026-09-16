@@ -12,6 +12,7 @@
   "author": "ryan",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^17.4.2",
     "ejs": "^5.0.2",
     "express": "^5.2.1",
     "moment": "^2.30.1",

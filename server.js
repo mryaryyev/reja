@@ -1,9 +1,9 @@
+require("dotenv").config();
 const http = require("http");
 const mongodb = require("mongodb"); // bizi database bilan connect qiladi
 
 let db;
-const connectionString =
-  "mongodb+srv://rovshen:wHZFt7bMDXCPM0sG@cluster0.3nspg5e.mongodb.net/Reja";
+const connectionString = process.env.MONGODB_URI;
 
   // TCP - Transmission Control Protocol (backend vc database doimi boglanish)
 mongodb.connect(
