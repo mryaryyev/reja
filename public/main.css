@@ -1,3 +1,44 @@
+:root {
+    --bg-page: #e5e5e5;
+    --bg-frame: rgb(240, 240, 240);
+    --bg-panel: #ffffff;
+    --text-primary: #000000;
+    --text-secondary: rgb(100, 100, 100);
+    --text-muted: grey;
+    --border-color: #f0f0f6;
+    --progress-track: #eee;
+    --accent: orange;
+    --accent-alt: #ffc107;
+    --tooltip-bg: black;
+    --tooltip-text: white;
+}
+
+[data-theme="dark"] {
+    --bg-page: #121212;
+    --bg-frame: #181818;
+    --bg-panel: #1f1f1f;
+    --text-primary: #eaeaea;
+    --text-secondary: #b5b5b5;
+    --text-muted: #999999;
+    --border-color: #333333;
+    --progress-track: #333333;
+    --accent: #ffa733;
+    --accent-alt: #ffca4d;
+    --tooltip-bg: #f2f2f2;
+    --tooltip-text: #111111;
+}
+
+html,
+body {
+    margin: 0;
+    background-color: var(--bg-page);
+}
+
+body {
+    color: var(--text-primary);
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
 .frame {
     width: 100%;
     height: 100%;
@@ -5,7 +46,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background: #e5e5e5;
+    background: var(--bg-page);
 
 }
 
@@ -17,14 +58,14 @@
     flex-direction: row;
     align-items: center;
     margin-top: 2px;
-    background: rgb(240, 240, 240);
+    background: var(--bg-frame);
 }
 
 .main_frame .left_frame {
     position: relative;
     width: 305px;
     height: 1315px;
-    background-color: white;
+    background-color: var(--bg-panel);
     display: flex;
     flex-direction: column;
 
@@ -44,18 +85,15 @@
     position: relative;
     width: 108px;
     height: 1315px;
-    background-color: white;
+    background-color: var(--bg-panel);
     align-items: center;
     display: flex;
     flex-direction: column;
 }
 
-.contrast {
+.right_frame .theme-toggle {
     margin-top: 50px;
     margin-bottom: 160px;
-    background-color: white;
-    border: none;
-    cursor: pointer;
 }
 
 .home_tooltip {
@@ -80,8 +118,8 @@
 }
 
 .tooltip {
-  background-color: black;
-  color: white;
+  background-color: var(--tooltip-bg);
+  color: var(--tooltip-text);
   padding: 8px 16px;
   border-radius: 5px;
   font-family: sans-serif;
@@ -110,6 +148,11 @@
     border-radius: 20px;
     border: none;
     cursor: pointer;
+    background-color: var(--bg-panel);
+}
+
+[data-theme="dark"] .btn_icons img {
+    filter: invert(1);
 }
 
 
@@ -178,7 +221,7 @@
 
 .link_href {
     text-decoration: none;
-    color: black;
+    color: var(--text-primary);
 }
 
 .icon {
@@ -206,7 +249,7 @@
     margin-bottom: 25px;
     margin-top: 39px;
     /* background: ; */
-    border: 1.5px solid #f0f0f6;
+    border: 1.5px solid var(--border-color);
 }
 
 
@@ -250,21 +293,21 @@
     align-items: center;
     justify-content: space-between;
     font-size: 14px;
-    color: rgb(100, 100, 100);
+    color: var(--text-secondary);
     margin-bottom: 10px;
 }
 
 .progress-bg {
   width: 100%;
   height: 5px;
-  background-color: #eee;
+  background-color: var(--progress-track);
   border-radius: 3px;
   margin-bottom: 10px;
 }
 
 .progress-fill {
   height: 100%;
-  background-color: #ffc107;
+  background-color: var(--accent-alt);
   border-radius: 3px;
 }
 
@@ -284,7 +327,7 @@
     align-items: center;
     justify-content: space-between;
     font-size: 14px;
-    color: rgb(100, 100, 100);
+    color: var(--text-secondary);
     margin-bottom: 10px;
 }
 
@@ -301,7 +344,7 @@
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
-    color: rgb(100, 100, 100);
+    color: var(--text-secondary);
 }
 
 
@@ -310,7 +353,7 @@
     height: 455px;
     display: flex;
     flex-direction: row;
-    background: white;
+    background: var(--bg-panel);
     margin-bottom: 130px;
 }
 
@@ -346,11 +389,11 @@
     text-align: left;
     text-transform: capitalize;
     margin-bottom: 30px;
-    color: rgb(100, 100, 100);
+    color: var(--text-secondary);
 }
 
 .button {
-    background-color: orange;
+    background-color: var(--accent);
     border: none;
     border-radius: 4px;
     padding: 16px 32px;
@@ -392,7 +435,7 @@
     font-weight: 400;
     line-height: 24px;
     letter-spacing: 0%;
-    color: rgb(100, 100, 100);
+    color: var(--text-secondary);
     text-align: center;
     text-transform: capitalize;
     display: flex;
@@ -416,7 +459,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: white;
+    background-color: var(--bg-panel);
 }
 
 .service_image {
@@ -444,7 +487,7 @@
     letter-spacing: 0%;
     text-align: center;
     text-transform: capitalize;
-    color: rgb(100, 100, 100);
+    color: var(--text-secondary);
 }
 
 .advertising {
@@ -471,7 +514,7 @@
     letter-spacing: 0%;
     text-align: center;
     text-transform: capitalize;
-    color: rgb(100, 100, 100);
+    color: var(--text-secondary);
     margin-bottom: 25px;
 }
 
@@ -483,6 +526,6 @@
     line-height: 14px;
     letter-spacing: 0%;
     text-align: left;
-    color: orange;
+    color: var(--accent);
     text-decoration: none
 }

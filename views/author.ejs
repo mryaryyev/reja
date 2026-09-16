@@ -6,7 +6,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("theme");
+          if (t !== "dark" && t !== "light") {
+            t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          }
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
     <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <title>Portfolio</title>
@@ -222,8 +234,10 @@
 
 
             <div class="right_frame">
-                <button class="contrast">
-                    <img src="btn_icon/contrast.svg" alt="">
+                <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+                    <i class="fa-solid fa-sun theme-toggle-icon theme-toggle-icon-sun"></i>
+                    <i class="fa-solid fa-moon theme-toggle-icon theme-toggle-icon-moon"></i>
+                    <span class="theme-toggle-thumb"></span>
                 </button>
                 <div class="home_tooltip">
                     <div class="tooltip">Home</div>
@@ -250,6 +264,7 @@
             </div>
         </div>
     </div>
+    <script src="/theme.js"></script>
 </body>
 
 </html>
